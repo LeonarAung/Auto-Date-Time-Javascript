@@ -1,4 +1,5 @@
-
+function autodatetime(timestamp,localtz){
+	
 	try{
 	timestamp = timestamp.toString();
 	localtz = parseFloat(localtz);
