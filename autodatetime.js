@@ -22,7 +22,7 @@ function autodatetime(timestamp,localtz,id){
 		time=rtime[0]+":"+rtime[1]+" AM";
 	}
 	try{	
-	document.getElementById(id).innerHTML=rdate+" "+time;
-	}catch(err){console.log(err);document.getElementById(id).innerHTML="Error";}
+	$(#+id).html(rdate+" "+time);
+	}catch(err){console.log(err);$(#+id).html("Error");}
 }}catch(err){console.log(err+" double quote required");}
 	}
