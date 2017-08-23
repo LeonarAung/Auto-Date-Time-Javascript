@@ -1,4 +1,4 @@
-function autodatetime(timestamp,localtz){
+function autodatetime(timestamp,localtimezone){
 	
 	try{
 	timestamp = timestamp.toString();
