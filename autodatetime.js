@@ -1,4 +1,4 @@
-function autodatetime(timestamp,localtz){
+function autodatetime(timestamp,localtz,id){
 	
 	try{
 	timestamp = timestamp.toString();
@@ -21,8 +21,8 @@ function autodatetime(timestamp,localtz){
 		rtime[0]=parseInt(rtime[0], 10);
 		time=rtime[0]+":"+rtime[1]+" AM";
 	}
-	try{
-	alert(rdate+" "+time)	
-	}catch(err){console.log(err);}
+	try{	
+	document.getElementById(id).innerHTML=rdate+" "+time;
+	}catch(err){console.log(err);document.getElementById(id).innerHTML="Error";}
 }}catch(err){console.log(err+" double quote required");}
 	}
