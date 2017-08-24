@@ -59,12 +59,10 @@ parameter4=static format(String)
 
 in Custom method, 
 ```
-cautodatetime(parameter1,parameter2,"parameter3","parameter4");
+cautodatetime(parameter1,parameter2);
 
 parameter1=timestamp(int)
 parameter2=your local timezone(float) 
-parameter3=id of element(String)
-parameter4=static format(String)
 ```
 
 ## Built With
