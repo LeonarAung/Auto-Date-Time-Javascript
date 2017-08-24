@@ -1,4 +1,4 @@
-function autodatetime(timestamp,localtimezone){
+function cautodatetime(timestamp,localtz){
 	
 	try{
 	timestamp = timestamp.toString();
@@ -12,20 +12,17 @@ function autodatetime(timestamp,localtimezone){
 	var date = new Date((timestamp*1000)+timezonedifferences);			
 	var rdate = date.toISOString().substring(0, 10);
 	rdate = rdate.split("-");
-	var rdate1=rdate[2]+"-"+rdate[1]+"-"+rdate[0];
-	var rdate2=rdate[2]+"/"+rdate[1]+"/"+rdate[0];
 		
 	var rtime =date.toISOString().substring(10, 19).replace('T', ' ');
-	alert(rtime);
+	
 	rtime = rtime.split(":");	
-	if(rtime[0]>12){
-		time=rtime[0]-12+":"+rtime[1]+" PM";
+	if(rtime[0]>12){	
 		var ampm="PM";
+		
 	}
-	else{
-		rtime[0]=parseInt(rtime[0], 10);
-		time=rtime[0]+":"+rtime[1]+" AM";
+	else{	
 		var ampm="AM";
+		
 	}
 	try{
 		return {
@@ -37,6 +34,49 @@ function autodatetime(timestamp,localtimezone){
 		second: rtime[2],
 		ampm: ampm
     };
+		
+	}catch(err){console.log(err);}
+}
+	
+	}catch(err){console.log(err+" double quote required");}
+	}
+	
+function sautodatetime(timestamp,localtz,id,statement){
+	
+	try{
+	timestamp = timestamp.toString();
+	localtz = parseFloat(localtz);
+	if(timestamp.match(/^[0-9]+$/) != null){
+	var d = new Date();
+	var n = -(d.getTimezoneOffset())/60;
+	var time;
+	var timezonedifferences=n-localtz;
+	timezonedifferences=timezonedifferences*60*60*1000;	
+	var date = new Date((timestamp*1000)+timezonedifferences);			
+	var rdate = date.toISOString().substring(0, 10);
+	rdate = rdate.split("-");
+		
+	var rtime =date.toISOString().substring(10, 19).replace('T', ' ');
+	
+	rtime = rtime.split(":");	
+	if(rtime[0]>12){	
+		var ampm="PM";
+		var hf=rtime[0]-12;
+	}
+	else{	
+		var ampm="AM";
+		var hf=rtime[0]-12;
+	}
+	try{
+		if(statement=="date"){		
+		$("#"+id).html(rdate[2]+"-"+rdate[1]+"-"+rdate[0]);}
+		else if(statement=="time"){		
+		$("#"+id).html(hf+":"+rtime[1]+" "+ampm);}
+		else if(statement=="dt"){		
+		$("#"+id).html(rdate[2]+"-"+rdate[1]+"-"+rdate[0]+" "+hf+":"+rtime[1]+" "+ampm);}
+		else{
+			$("#"+id).html(rdate[2]+"-"+rdate[1]+"-"+rdate[0]+" "+hf+":"+rtime[1]+" "+ampm);
+		}
 		
 	}catch(err){console.log(err);}
 }
