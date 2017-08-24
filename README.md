@@ -2,86 +2,77 @@
 
 It is a client script that can convert a static date/time/timestamp to the appropriate local date/time of every client. If you are trying to share a date/time that can vary according to users' timezone, it can help you.
 
-## Getting Started
+### Set up
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Download autodatetime.js and upload to your hosting folders and include external autodatetime.js.
 
-### Prerequisites
+<script src="js/autodatetime.js"></script> // to uploaded location
 
-What things you need to install the software and how to install them
+## Sample
+You can check output result at http://www.autodatetime.com/
 
-```
-Give examples
-```
+## Getting start
 
-### Installing
+After initialized autodatetime.js, you need to generate the timestamp of the static date/time unit that you want to globalize.
+if you want to convert "24-08-2017 3:00 PM" to auto date/time, you need to get that timestamp first. You can try with php or other online tools.
 
-A step by step series of examples that tell you have to get a development env running
+There is 2 types of formats available, standard and custom. You can get normal date or time converted by Standard method. But if you want to customize in detail even to seconds and each individuals, You can use custom method to grab each of day,month,year,hour,minutes,seconds and am/pm.
 
-Say what the step will be
+### Coding
 
-```
-Give the example
-```
-
-And repeat
+1 - For standard (JQuery Required)
 
 ```
-until finished
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/LeonarAung/Auto-Date-Time-Javascript/21cc7587/autodatetime.js"></script>
+<div id="converteddate"> </div><div id="convertedtime"> </div><div id="converteddatetime"> </div>
+<script> 
+sautodatetime(1503585000,6.5,"converteddate","date"); //for Date
+sautodatetime(1503585000,6.5,"convertedtime","time"); //for Time
+sautodatetime(1503585000,6.5,"converteddatetime","dt"); //for both
+</script>
+				
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+2 - For Custom (JQuery Required)
 
-## Running the tests
+```
+<script src="https://cdn.rawgit.com/LeonarAung/Auto-Date-Time-Javascript/97138aec/autodatetime.js"></script>
+<div id="SomeID"> </div><br/>
+<script> var adt = cautodatetime(1503585000,6.5);
+document.getElementById("SomeID").innerHTML=adt.day+"-"+adt.month+"-"+adt.year+" "+adt.hour+":"+adt.minute+":"+adt.second+" "+adt.ampm; 
+</script>
+				
+```
 
-Explain how to run the automated tests for this system
+### Explaination
 
-### Break down into end to end tests
+in Standard method, 
+sautodatetime(parameter1,parameter2,"parameter3","parameter4");
 
-Explain what these tests test and why
-
+parameter1=timestamp(int)
+parameter2=your local timezone(float) 
+parameter3=id of element(String)
+parameter4=static format(String)
 ```
 Give an example
 ```
+in Custom method, 
+cautodatetime(parameter1,parameter2,"parameter3","parameter4");
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
+parameter1=timestamp(int)
+parameter2=your local timezone(float) 
+parameter3=id of element(String)
+parameter4=static format(String)
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Javascript /(Jquery)
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Leonar Aung** - *Initial work* - [Leonar Aung](https://github.com/LeonarAung)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
