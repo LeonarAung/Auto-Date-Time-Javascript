@@ -34,7 +34,7 @@ sautodatetime(1503585000,6.5,"converteddatetime","dt"); //for both
 				
 ```
 
-2 - For Custom (JQuery Required)
+2 - For Custom
 
 ```
 <script src="https://cdn.rawgit.com/LeonarAung/Auto-Date-Time-Javascript/97138aec/autodatetime.js"></script>
