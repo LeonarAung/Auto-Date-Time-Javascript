@@ -48,6 +48,7 @@ document.getElementById("SomeID").innerHTML=adt.day+"-"+adt.month+"-"+adt.year+"
 ### Explaination
 
 in Standard method, 
+```
 sautodatetime(parameter1,parameter2,"parameter3","parameter4");
 
 parameter1=timestamp(int)
@@ -55,15 +56,16 @@ parameter2=your local timezone(float)
 parameter3=id of element(String)
 parameter4=static format(String)
 ```
-Give an example
-```
+
 in Custom method, 
+```
 cautodatetime(parameter1,parameter2,"parameter3","parameter4");
 
 parameter1=timestamp(int)
 parameter2=your local timezone(float) 
 parameter3=id of element(String)
 parameter4=static format(String)
+```
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
