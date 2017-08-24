@@ -74,5 +74,5 @@ Javascript /(Jquery)
 
 ## Authors
 
-* **Leonar Aung** - *Initial work* - [Leonar Aung](https://github.com/LeonarAung)
+* **[Leonar Aung](https://github.com/LeonarAung)**
 
