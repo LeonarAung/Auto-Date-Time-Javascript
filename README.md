@@ -66,9 +66,6 @@ parameter2=your local timezone(float)
 parameter3=id of element(String)
 parameter4=static format(String)
 ```
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
